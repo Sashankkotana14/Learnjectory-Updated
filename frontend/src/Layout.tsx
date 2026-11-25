@@ -1,5 +1,6 @@
 
 import { useState } from 'react';
+import type { FormEvent } from 'react';
 import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import { GraduationCap, Search, Menu, LogOut } from 'lucide-react';
 import { nav } from './config';
@@ -14,7 +15,7 @@ export default function Layout() {
   const [q, setQ] = useState('');
   const nv = useNavigate();
 
-  const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSearch = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const query = q.trim();
@@ -131,3 +132,4 @@ export default function Layout() {
     </div>
   );
 }
+
